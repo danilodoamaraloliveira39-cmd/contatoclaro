@@ -1,1005 +1,795 @@
-html
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Central de Atendimento</title>
-<meta name="description" content="Central de atendimento e suporte. Encontre informações, solicite atendimento e fale com nossa equipe.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Inter',Arial,sans-serif;
-    background:#f5f7fa;
-    color:#172033;
-    line-height:1.6;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-header{
-    background:#ffffff;
-    border-bottom:1px solid #e8ebef;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-.navbar{
-    max-width:1180px;
-    margin:auto;
-    min-height:76px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 24px;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:11px;
-    font-size:20px;
-    font-weight:800;
-    color:#16233b;
-}
-
-.logo-icon{
-    width:40px;
-    height:40px;
-    border-radius:11px;
-    background:#146ef5;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    font-size:20px;
-}
-
-.nav-links{
-    display:flex;
-    gap:30px;
-    align-items:center;
-}
-
-.nav-links a{
-    font-size:14px;
-    font-weight:600;
-    color:#526071;
-    transition:.2s;
-}
-
-.nav-links a:hover{
-    color:#146ef5;
-}
-
-.nav-button{
-    background:#146ef5;
-    color:#fff !important;
-    padding:11px 19px;
-    border-radius:8px;
-}
-
-.hero{
-    background:
-    radial-gradient(circle at 85% 20%,rgba(20,110,245,.13),transparent 30%),
-    linear-gradient(135deg,#f8fbff 0%,#eef5ff 100%);
-    padding:85px 24px 90px;
-}
-
-.hero-container{
-    max-width:1180px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:70px;
-    align-items:center;
-}
-
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:#e8f1ff;
-    color:#146ef5;
-    padding:8px 13px;
-    border-radius:30px;
-    font-size:13px;
-    font-weight:700;
-    margin-bottom:20px;
-}
-
-.badge span{
-    width:7px;
-    height:7px;
-    background:#18a957;
-    border-radius:50%;
-}
-
-.hero h1{
-    font-size:48px;
-    line-height:1.12;
-    letter-spacing:-1.5px;
-    max-width:650px;
-    margin-bottom:20px;
-}
-
-.hero h1 strong{
-    color:#146ef5;
-}
-
-.hero p{
-    font-size:17px;
-    color:#5d6878;
-    max-width:600px;
-    margin-bottom:32px;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
-
-.btn-primary,
-.btn-secondary{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:14px 22px;
-    border-radius:9px;
-    font-size:14px;
-    font-weight:700;
-    transition:.2s;
-}
-
-.btn-primary{
-    background:#146ef5;
-    color:#fff;
-    box-shadow:0 8px 20px rgba(20,110,245,.20);
-}
-
-.btn-primary:hover{
-    transform:translateY(-2px);
-    background:#095fdc;
-}
-
-.btn-secondary{
-    background:#fff;
-    border:1px solid #dce3ec;
-    color:#27364a;
-}
-
-.btn-secondary:hover{
-    border-color:#146ef5;
-    color:#146ef5;
-}
-
-.hero-card{
-    background:#fff;
-    border:1px solid #e5eaf0;
-    border-radius:18px;
-    padding:28px;
-    box-shadow:0 20px 50px rgba(30,55,90,.10);
-}
-
-.status{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:#1a9a51;
-    font-size:13px;
-    font-weight:700;
-    margin-bottom:22px;
-}
-
-.status-dot{
-    width:10px;
-    height:10px;
-    background:#19ae5b;
-    border-radius:50%;
-}
-
-.hero-card h3{
-    font-size:21px;
-    margin-bottom:8px;
-}
-
-.hero-card > p{
-    font-size:14px;
-    margin-bottom:22px;
-}
-
-.card-option{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding:16px;
-    background:#f7f9fc;
-    border-radius:10px;
-    margin-top:10px;
-}
-
-.card-icon{
-    width:42px;
-    height:42px;
-    background:#e7f0ff;
-    color:#146ef5;
-    border-radius:9px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:19px;
-}
-
-.card-option strong{
-    display:block;
-    font-size:14px;
-}
-
-.card-option span{
-    display:block;
-    color:#7a8594;
-    font-size:12px;
-    margin-top:2px;
-}
-
-section{
-    padding:80px 24px;
-}
-
-.container{
-    max-width:1180px;
-    margin:auto;
-}
-
-.section-header{
-    text-align:center;
-    max-width:680px;
-    margin:0 auto 45px;
-}
-
-.section-header span{
-    color:#146ef5;
-    font-size:13px;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
-
-.section-header h2{
-    font-size:34px;
-    margin:8px 0 12px;
-    letter-spacing:-.7px;
-}
-
-.section-header p{
-    color:#687486;
-    font-size:15px;
-}
-
-.services{
-    background:#fff;
-}
-
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.service-card{
-    border:1px solid #e7ebf0;
-    border-radius:14px;
-    padding:28px;
-    background:#fff;
-    transition:.25s;
-}
-
-.service-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 35px rgba(20,40,70,.08);
-    border-color:#d4e2f8;
-}
-
-.service-icon{
-    width:48px;
-    height:48px;
-    background:#eaf2ff;
-    color:#146ef5;
-    border-radius:11px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:21px;
-    margin-bottom:19px;
-}
-
-.service-card h3{
-    font-size:17px;
-    margin-bottom:8px;
-}
-
-.service-card p{
-    color:#707b89;
-    font-size:13px;
-    margin-bottom:20px;
-}
-
-.service-card a{
-    color:#146ef5;
-    font-size:13px;
-    font-weight:700;
-}
-
-.contact{
-    background:#f5f7fa;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.contact-card{
-    background:#fff;
-    border:1px solid #e6ebf1;
-    border-radius:14px;
-    padding:28px;
-    text-align:center;
-}
-
-.contact-icon{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#eaf2ff;
-    color:#146ef5;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 17px;
-    font-size:22px;
-}
-
-.contact-card h3{
-    font-size:17px;
-    margin-bottom:7px;
-}
-
-.contact-card p{
-    font-size:13px;
-    color:#717c8b;
-    margin-bottom:18px;
-}
-
-.contact-card a{
-    display:inline-block;
-    color:#146ef5;
-    font-size:13px;
-    font-weight:700;
-}
-
-.faq{
-    background:#fff;
-}
-
-.faq-list{
-    max-width:850px;
-    margin:auto;
-}
-
-details{
-    border-bottom:1px solid #e5e9ee;
-    padding:20px 0;
-}
-
-summary{
-    cursor:pointer;
-    list-style:none;
-    font-weight:700;
-    font-size:15px;
-    position:relative;
-    padding-right:30px;
-}
-
-summary::-webkit-details-marker{
-    display:none;
-}
-
-summary:after{
-    content:"+";
-    position:absolute;
-    right:0;
-    top:-4px;
-    font-size:23px;
-    color:#146ef5;
-    font-weight:400;
-}
-
-details[open] summary:after{
-    content:"−";
-}
-
-details p{
-    color:#707b89;
-    font-size:14px;
-    margin-top:12px;
-    padding-right:30px;
-}
-
-.cta{
-    padding:75px 24px;
-    background:#146ef5;
-    color:#fff;
-}
-
-.cta-container{
-    max-width:900px;
-    margin:auto;
-    text-align:center;
-}
-
-.cta h2{
-    font-size:35px;
-    margin-bottom:12px;
-}
-
-.cta p{
-    opacity:.9;
-    max-width:650px;
-    margin:0 auto 25px;
-    font-size:15px;
-}
-
-.cta .btn-primary{
-    background:#fff;
-    color:#146ef5;
-    box-shadow:none;
-}
-
-footer{
-    background:#111a29;
-    color:#fff;
-    padding:50px 24px 25px;
-}
-
-.footer-grid{
-    max-width:1180px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:45px;
-    padding-bottom:40px;
-}
-
-.footer-brand p{
-    color:#aeb8c7;
-    font-size:13px;
-    max-width:340px;
-    margin-top:15px;
-}
-
-.footer-column h4{
-    font-size:14px;
-    margin-bottom:17px;
-}
-
-.footer-column a{
-    display:block;
-    color:#aeb8c7;
-    font-size:13px;
-    margin-bottom:10px;
-}
-
-.footer-column a:hover{
-    color:#fff;
-}
-
-.footer-bottom{
-    max-width:1180px;
-    margin:auto;
-    border-top:1px solid #283244;
-    padding-top:22px;
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    color:#8f9aaa;
-    font-size:12px;
-}
-
-.whatsapp{
-    position:fixed;
-    right:22px;
-    bottom:22px;
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    background:#25D366;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:27px;
-    box-shadow:0 8px 25px rgba(0,0,0,.20);
-    z-index:2000;
-    transition:.2s;
-}
-
-.whatsapp:hover{
-    transform:scale(1.07);
-}
-
-@media(max-width:900px){
-
-    .hero-container{
-        grid-template-columns:1fr;
-        gap:40px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Central de Informações e Atendimento</title>
+  <meta name="description" content="Consulte informações sobre telefonia, internet residencial, televisão e Wi-Fi.">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    :root {
+      --vermelho: #e30613;
+      --vermelho-escuro: #b9000b;
+      --texto: #292929;
+      --cinza: #666;
+      --fundo: #f7f7f7;
+      --branco: #fff;
+      --verde-whatsapp: #25D366;
     }
 
-    .hero h1{
-        font-size:40px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .service-grid,
-    .contact-grid{
-        grid-template-columns:1fr 1fr;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:650px){
-
-    .navbar{
-        min-height:68px;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
     }
 
-    .nav-links{
-        display:none;
+    a {
+      color: inherit;
     }
 
-    .hero{
-        padding:60px 20px;
+    header {
+      background: var(--branco);
+      border-bottom: 3px solid var(--vermelho);
+      padding: 18px 6%;
     }
 
-    .hero h1{
-        font-size:34px;
+    .cabecalho {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .hero p{
-        font-size:15px;
+    .marca {
+      color: var(--vermelho);
+      font-size: 25px;
+      font-weight: 800;
+      text-decoration: none;
     }
 
-    section{
-        padding:60px 20px;
+    .marca span {
+      color: var(--texto);
+      font-weight: 500;
     }
 
-    .section-header h2{
-        font-size:28px;
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
     }
 
-    .service-grid,
-    .contact-grid,
-    .footer-grid{
-        grid-template-columns:1fr;
+    nav a {
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
     }
 
-    .footer-bottom{
-        flex-direction:column;
+    nav a:hover {
+      color: var(--vermelho);
     }
 
-    .hero-buttons{
-        flex-direction:column;
+    .hero {
+      background: linear-gradient(125deg, #e30613, #a9000a);
+      color: white;
+      padding: 75px 6%;
+      text-align: center;
     }
 
-    .btn-primary,
-    .btn-secondary{
-        width:100%;
+    .hero-conteudo {
+      max-width: 800px;
+      margin: auto;
     }
 
-    .whatsapp{
-        width:54px;
-        height:54px;
-        right:17px;
-        bottom:17px;
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.2;
+      margin-bottom: 20px;
     }
-}
-</style>
+
+    .hero p {
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 6px;
+      background: var(--vermelho);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid var(--vermelho);
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .botao:hover {
+      background: var(--vermelho-escuro);
+      border-color: var(--vermelho-escuro);
+      transform: translateY(-2px);
+    }
+
+    .botao-branco {
+      background: white;
+      color: var(--vermelho);
+      border-color: white;
+    }
+
+    .botao-branco:hover {
+      background: #f5f5f5;
+      border-color: #f5f5f5;
+      color: var(--vermelho-escuro);
+    }
+
+    .container {
+      max-width: 1150px;
+      padding: 55px 6%;
+      margin: auto;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 30px;
+    }
+
+    .subtitulo {
+      text-align: center;
+      color: var(--cinza);
+      margin: 0 auto 35px;
+      max-width: 680px;
+    }
+
+    .aviso {
+      max-width: 900px;
+      margin: 0 auto 35px;
+      padding: 16px 20px;
+      background: #fff;
+      border-left: 4px solid var(--vermelho);
+      border-radius: 5px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .cartao {
+      background: white;
+      padding: 28px;
+      border-radius: 10px;
+      border: 1px solid #e8e8e8;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .icone {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      background: #fff0f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      margin-bottom: 17px;
+    }
+
+    .cartao h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .cartao p {
+      color: var(--cinza);
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .cartao .botao {
+      font-size: 14px;
+      padding: 11px 17px;
+    }
+
+    .faixa {
+      background: #fff;
+      padding: 45px 6%;
+      text-align: center;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .faixa h2 {
+      margin-bottom: 12px;
+      font-size: 27px;
+    }
+
+    .faixa p {
+      color: var(--cinza);
+      max-width: 700px;
+      margin: 0 auto 22px;
+    }
+
+    .documento {
+      background: white;
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 20px;
+      border: 1px solid #e8e8e8;
+    }
+
+    .documento h3 {
+      color: var(--vermelho);
+      margin: 20px 0 8px;
+    }
+
+    .documento h3:first-of-type {
+      margin-top: 12px;
+    }
+
+    .documento p,
+    .documento li {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .documento ul {
+      padding-left: 22px;
+    }
+
+    footer {
+      background: #202020;
+      color: white;
+      padding: 38px 6% 20px;
+    }
+
+    .rodape-conteudo {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      color: #d4d4d4;
+      font-size: 14px;
+    }
+
+    .links-rodape {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .links-rodape a:hover {
+      color: white;
+    }
+
+    .copyright {
+      max-width: 1150px;
+      margin: 25px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid #444;
+      text-align: center;
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    /* Botão flutuante do WhatsApp */
+
+    .botao-whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 9999;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--verde-whatsapp);
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s;
+    }
+
+    .botao-whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    .botao-whatsapp svg {
+      width: 33px;
+      height: 33px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 650px) {
+      header {
+        padding: 16px 5%;
+      }
+
+      .cabecalho {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding: 55px 5%;
+      }
+
+      .container {
+        padding: 40px 5%;
+      }
+
+      .grade {
+        grid-template-columns: 1fr;
+      }
+
+      .rodape-conteudo {
+        grid-template-columns: 1fr;
+      }
+
+      .titulo {
+        font-size: 26px;
+      }
+
+      .botao-whatsapp {
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<nav class="navbar">
+  <header id="inicio">
+    <div class="cabecalho">
+      <a class="marca" href="#inicio">
+        Central <span>de Informações</span>
+      </a>
 
-<a href="#inicio" class="logo">
-    <div class="logo-icon">✓</div>
-    Central de Atendimento
-</a>
-
-<div class="nav-links">
-    <a href="#inicio">Início</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#contato">Contato</a>
-    <a href="#faq">Dúvidas</a>
-    <a href="#contato" class="nav-button">Falar com atendente</a>
-</div>
-
-</nav>
-</header>
-
-<main>
-
-<section class="hero" id="inicio">
-<div class="hero-container">
-
-<div>
-
-<div class="badge">
-    <span></span>
-    Atendimento disponível
-</div>
-
-<h1>
-    Precisa de ajuda?<br>
-    <strong>Estamos aqui para atender.</strong>
-</h1>
-
-<p>
-    Encontre informações, consulte opções de atendimento
-    e fale com nossa equipe de forma rápida e prática.
-</p>
-
-<div class="hero-buttons">
-    <a href="#contato" class="btn-primary">Falar com atendente</a>
-    <a href="#servicos" class="btn-secondary">Ver opções de atendimento</a>
-</div>
-
-</div>
-
-<div class="hero-card">
-
-<div class="status">
-    <span class="status-dot"></span>
-    Atendimento online
-</div>
-
-<h3>Como podemos ajudar?</h3>
-
-<p>
-    Selecione uma das opções abaixo para encontrar
-    o canal de atendimento adequado.
-</p>
-
-<a href="#contato" class="card-option">
-    <div class="card-icon">💬</div>
-    <div>
-        <strong>Atendimento</strong>
-        <span>Fale com nossa equipe</span>
+      <nav aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#informacoes">Informações</a>
+        <a href="#privacidade">Privacidade</a>
+        <a href="#termos">Termos de Uso</a>
+      </nav>
     </div>
-</a>
+  </header>
 
-<a href="#servicos" class="card-option">
-    <div class="card-icon">📋</div>
-    <div>
-        <strong>Solicitações</strong>
-        <span>Consulte nossas opções</span>
+  <main>
+
+    <section class="hero">
+      <div class="hero-conteudo">
+        <h1>Encontre informações sobre atendimento</h1>
+
+        <p>
+          Consulte informações sobre telefonia, internet residencial,
+          televisão e Wi-Fi. Entre em contato pelo WhatsApp.
+        </p>
+
+        <a class="botao botao-branco"
+           href="https://wa.me/message/SKPFN7T7CFPDL1"
+           target="_blank"
+           rel="noopener noreferrer">
+          FALAR PELO WHATSAPP
+        </a>
+      </div>
+    </section>
+
+    <section class="container" id="servicos">
+
+      <h2 class="titulo">Como podemos ajudar?</h2>
+
+      <p class="subtitulo">
+        Selecione uma das opções para entrar em contato pelo WhatsApp
+        e solicitar informações.
+      </p>
+
+      <div class="aviso">
+        Este é um site independente de informações e não representa
+        oficialmente a Claro. Para serviços oficiais, consulte também
+        os canais disponibilizados pela operadora.
+      </div>
+
+      <div class="grade">
+
+        <article class="cartao">
+          <div class="icone" aria-hidden="true">📱</div>
+
+          <h3>Claro Móvel</h3>
+
+          <p>
+            Entre em contato para solicitar informações sobre
+            telefonia móvel, linhas, planos e suporte.
+          </p>
+
+          <a class="botao"
+             href="https://wa.me/message/SKPFN7T7CFPDL1"
+             target="_blank"
+             rel="noopener noreferrer">
+            💬 FALAR PELO WHATSAPP
+          </a>
+        </article>
+
+        <article class="cartao">
+          <div class="icone" aria-hidden="true">🌐</div>
+
+          <h3>Claro Residencial</h3>
+
+          <p>
+            Solicite informações sobre internet residencial,
+            serviços para sua casa e opções de atendimento.
+          </p>
+
+          <a class="botao"
+             href="https://wa.me/message/SKPFN7T7CFPDL1"
+             target="_blank"
+             rel="noopener noreferrer">
+            💬 FALAR PELO WHATSAPP
+          </a>
+        </article>
+
+        <article class="cartao">
+          <div class="icone" aria-hidden="true">📺</div>
+
+          <h3>Claro TV</h3>
+
+          <p>
+            Entre em contato para consultar informações sobre
+            televisão, serviços e opções de suporte.
+          </p>
+
+          <a class="botao"
+             href="https://wa.me/message/SKPFN7T7CFPDL1"
+             target="_blank"
+             rel="noopener noreferrer">
+            💬 FALAR PELO WHATSAPP
+          </a>
+        </article>
+
+        <article class="cartao">
+          <div class="icone" aria-hidden="true">📶</div>
+
+          <h3>Internet e Wi-Fi</h3>
+
+          <p>
+            Solicite informações sobre internet, conexão Wi-Fi
+            e opções de atendimento.
+          </p>
+
+          <a class="botao"
+             href="https://wa.me/message/SKPFN7T7CFPDL1"
+             target="_blank"
+             rel="noopener noreferrer">
+            💬 FALAR PELO WHATSAPP
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="faixa" id="informacoes">
+      <h2>Precisa de atendimento?</h2>
+
+      <p>
+        Entre em contato pelo WhatsApp para solicitar informações.
+        Confirme as condições e a disponibilidade dos serviços
+        diretamente com o responsável pelo atendimento.
+      </p>
+
+      <a class="botao"
+         href="https://wa.me/message/SKPFN7T7CFPDL1"
+         target="_blank"
+         rel="noopener noreferrer">
+        💬 FALAR PELO WHATSAPP
+      </a>
+    </section>
+
+    <section class="container" id="privacidade">
+
+      <h2 class="titulo">Política de Privacidade</h2>
+
+      <p class="subtitulo">
+        Informações sobre privacidade e tratamento de dados.
+      </p>
+
+      <div class="documento">
+
+        <p>
+          <strong>Última atualização:</strong> 20 de outubro de 2026.
+        </p>
+
+        <p>
+          Esta política descreve as práticas gerais de privacidade
+          aplicáveis a este site independente. O responsável deverá
+          adequar o texto às práticas efetivamente utilizadas.
+        </p>
+
+        <h3>1. Responsável pelo site</h3>
+
+        <p>
+          Nome ou razão social: [PREENCHER NOME OU RAZÃO SOCIAL].
+          <br>
+          E-mail: [PREENCHER E-MAIL DE CONTATO].
+          <br>
+          CNPJ, quando aplicável: [PREENCHER CNPJ].
+        </p>
+
+        <h3>2. Dados pessoais</h3>
+
+        <p>
+          Este modelo não possui formulário próprio para coleta
+          de dados pessoais. Ao clicar em um botão do WhatsApp,
+          o usuário será direcionado para um serviço externo.
+          O tratamento de dados realizado pelo WhatsApp está sujeito
+          às políticas e condições do respectivo fornecedor.
+        </p>
+
+        <h3>3. Finalidade do tratamento</h3>
+
+        <p>
+          Caso o responsável passe a coletar dados pessoais,
+          deverá informar as finalidades, a base legal aplicável,
+          os dados tratados e os períodos de retenção, conforme
+          a Lei Geral de Proteção de Dados Pessoais (LGPD).
+        </p>
+
+        <h3>4. Compartilhamento de dados</h3>
+
+        <p>
+          Os links deste site podem levar a páginas de terceiros.
+          Ao acessá-las, o usuário estará sujeito às políticas
+          e práticas de privacidade desses serviços.
+        </p>
+
+        <h3>5. Cookies</h3>
+
+        <p>
+          Este código não inclui intencionalmente ferramentas
+          próprias de publicidade ou análise. A hospedagem e os
+          serviços externos podem utilizar tecnologias próprias.
+          O responsável deverá verificar os recursos efetivamente
+          utilizados na publicação.
+        </p>
+
+        <h3>6. Segurança</h3>
+
+        <p>
+          O responsável deverá adotar medidas técnicas e
+          administrativas adequadas para proteger os dados pessoais
+          que eventualmente tratar.
+        </p>
+
+        <h3>7. Direitos do titular</h3>
+
+        <p>
+          O titular poderá exercer os direitos previstos na LGPD,
+          conforme aplicáveis, incluindo confirmação do tratamento,
+          acesso e correção de dados, mediante contato com o responsável.
+        </p>
+
+        <h3>8. Contato</h3>
+
+        <p>
+          Para questões relacionadas à privacidade, entre em contato
+          pelo e-mail: [PREENCHER E-MAIL DE CONTATO].
+        </p>
+
+      </div>
+    </section>
+
+    <section class="container" id="termos">
+
+      <h2 class="titulo">Termos de Uso</h2>
+
+      <p class="subtitulo">
+        Condições gerais para utilização deste site.
+      </p>
+
+      <div class="documento">
+
+        <p>
+          <strong>Última atualização:</strong> 20 de outubro de 2026.
+        </p>
+
+        <h3>1. Aceitação</h3>
+
+        <p>
+          Ao navegar neste site, o usuário declara estar ciente
+          destes termos. Caso não concorde com as condições,
+          poderá deixar de utilizar a página.
+        </p>
+
+        <h3>2. Finalidade do site</h3>
+
+        <p>
+          Este site tem finalidade informativa e disponibiliza
+          opções de contato pelo WhatsApp. Não realiza, por si só,
+          contratação, cobrança, emissão de faturas ou suporte
+          técnico em nome da Claro.
+        </p>
+
+        <h3>3. Independência e marcas</h3>
+
+        <p>
+          Este site é independente e não declara possuir vínculo
+          comercial, societário ou institucional com a Claro.
+          As marcas mencionadas pertencem aos respectivos titulares
+          e identificam os serviços aos quais o conteúdo se refere.
+        </p>
+
+        <h3>4. WhatsApp e serviços externos</h3>
+
+        <p>
+          Os botões direcionam para o link de WhatsApp informado
+          pelo administrador do site. A disponibilidade do serviço
+          depende do fornecedor externo e das condições de acesso
+          do usuário. O tratamento de dados nessa plataforma está
+          sujeito às regras do respectivo fornecedor.
+        </p>
+
+        <h3>5. Informações e disponibilidade</h3>
+
+        <p>
+          O conteúdo é apresentado para orientação geral e pode
+          não refletir alterações recentes nos serviços ou nas
+          condições comerciais de terceiros. Confirme informações,
+          preços e disponibilidade diretamente com o responsável
+          pelo atendimento ou nos canais oficiais.
+        </p>
+
+        <h3>6. Uso adequado</h3>
+
+        <p>
+          O usuário compromete-se a utilizar a página de maneira
+          lícita, sem tentar comprometer seu funcionamento ou
+          violar direitos de terceiros.
+        </p>
+
+        <h3>7. Propriedade intelectual</h3>
+
+        <p>
+          O conteúdo original desta página pertence ao respectivo
+          autor. Marcas e materiais de terceiros permanecem sujeitos
+          aos direitos de seus titulares.
+        </p>
+
+        <h3>8. Alterações</h3>
+
+        <p>
+          Estes termos poderão ser atualizados para refletir
+          alterações no site ou na legislação aplicável.
+        </p>
+
+        <h3>9. Contato</h3>
+
+        <p>
+          Dúvidas sobre o site podem ser encaminhadas para:
+          [PREENCHER E-MAIL DE CONTATO].
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="rodape-conteudo">
+
+      <div>
+        <h3>Central de Informações</h3>
+
+        <p>
+          Página independente para consulta de informações
+          e contato sobre serviços de telecomunicações.
+        </p>
+
+        <p style="margin-top: 12px;">
+          Responsável: [PREENCHER NOME OU RAZÃO SOCIAL]
+        </p>
+
+        <p>
+          E-mail: [PREENCHER E-MAIL DE CONTATO]
+        </p>
+
+        <p style="margin-top: 14px;">
+          <a href="https://wa.me/message/SKPFN7T7CFPDL1"
+             target="_blank"
+             rel="noopener noreferrer">
+            Falar pelo WhatsApp
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <h3>Links úteis</h3>
+
+        <div class="links-rodape">
+          <a href="#inicio">Início</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#informacoes">Atendimento</a>
+          <a href="#privacidade">Política de Privacidade</a>
+          <a href="#termos">Termos de Uso</a>
+
+          <a href="https://www.claro.com.br/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Site oficial da Claro
+          </a>
+        </div>
+      </div>
+
     </div>
-</a>
 
-<a href="#faq" class="card-option">
-    <div class="card-icon">❓</div>
-    <div>
-        <strong>Central de dúvidas</strong>
-        <span>Veja perguntas frequentes</span>
+    <div class="copyright">
+      <p>
+        © <span id="ano"></span> Central de Informações.
+        Todos os direitos reservados.
+      </p>
+
+      <p>
+        Site independente, sem representação oficial da operadora.
+      </p>
     </div>
-</a>
-
-</div>
-
-</div>
-</section>
-
-
-<section class="services" id="servicos">
-
-<div class="container">
-
-<div class="section-header">
-    <span>Atendimento</span>
-    <h2>Encontre o que você precisa</h2>
-    <p>
-        Acesse rapidamente as principais opções
-        disponíveis em nossa central de atendimento.
-    </p>
-</div>
-
-<div class="service-grid">
-
-<div class="service-card">
-    <div class="service-icon">💬</div>
-    <h3>Falar com atendente</h3>
-    <p>
-        Entre em contato com nossa equipe para
-        receber orientações e informações.
-    </p>
-    <a href="#contato">Solicitar atendimento →</a>
-</div>
-
-<div class="service-card">
-    <div class="service-icon">📄</div>
-    <h3>Solicitações</h3>
-    <p>
-        Consulte informações sobre solicitações,
-        serviços e procedimentos.
-    </p>
-    <a href="#contato">Consultar →</a>
-</div>
-
-<div class="service-card">
-    <div class="service-icon">🔎</div>
-    <h3>Informações</h3>
-    <p>
-        Encontre informações gerais e orientações
-        para sua necessidade.
-    </p>
-    <a href="#faq">Ver informações →</a>
-</div>
-
-<div class="service-card">
-    <div class="service-icon">📞</div>
-    <h3>Suporte</h3>
-    <p>
-        Precisa de suporte? Nossa equipe está
-        disponível para ajudar.
-    </p>
-    <a href="#contato">Buscar suporte →</a>
-</div>
-
-<div class="service-card">
-    <div class="service-icon">🕐</div>
-    <h3>Horários</h3>
-    <p>
-        Consulte os canais disponíveis e os horários
-        de atendimento.
-    </p>
-    <a href="#contato">Ver canais →</a>
-</div>
-
-<div class="service-card">
-    <div class="service-icon">📱</div>
-    <h3>Atendimento digital</h3>
-    <p>
-        Escolha uma opção digital para entrar
-        em contato com nossa equipe.
-    </p>
-    <a href="#contato">Entrar em contato →</a>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<section class="contact" id="contato">
-
-<div class="container">
-
-<div class="section-header">
-    <span>Canais</span>
-    <h2>Fale com nossa equipe</h2>
-    <p>
-        Escolha o canal de atendimento que deseja utilizar.
-    </p>
-</div>
-
-<div class="contact-grid">
-
-<div class="contact-card">
-    <div class="contact-icon">💬</div>
-    <h3>WhatsApp</h3>
-    <p>
-        Atendimento rápido através do WhatsApp.
-    </p>
-    <a href="https://wa.me/5500000000000" target="_blank">
-        Iniciar atendimento →
-    </a>
-</div>
-
-<div class="contact-card">
-    <div class="contact-icon">📞</div>
-    <h3>Telefone</h3>
-    <p>
-        Entre em contato através de nossa central.
-    </p>
-    <a href="tel:+5500000000000">
-        Ligar agora →
-    </a>
-</div>
-
-<div class="contact-card">
-    <div class="contact-icon">✉️</div>
-    <h3>E-mail</h3>
-    <p>
-        Envie sua solicitação por e-mail.
-    </p>
-    <a href="mailto:atendimento@exemplo.com">
-        Enviar mensagem →
-    </a>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<section class="faq" id="faq">
-
-<div class="container">
-
-<div class="section-header">
-    <span>FAQ</span>
-    <h2>Perguntas frequentes</h2>
-    <p>
-        Confira algumas dúvidas comuns sobre nosso atendimento.
-    </p>
-</div>
-
-<div class="faq-list">
-
-<details>
-    <summary>Como posso falar com um atendente?</summary>
-    <p>
-        Você pode utilizar um dos canais de atendimento
-        disponíveis nesta página e escolher a opção mais adequada.
-    </p>
-</details>
-
-<details>
-    <summary>Quais canais de atendimento estão disponíveis?</summary>
-    <p>
-        Os canais disponíveis estão apresentados na seção
-        de contato desta página.
-    </p>
-</details>
-
-<details>
-    <summary>Como faço uma solicitação?</summary>
-    <p>
-        Para realizar uma solicitação, selecione a opção
-        de atendimento correspondente e siga as orientações fornecidas.
-    </p>
-</details>
-
-<details>
-    <summary>Posso solicitar suporte pelo WhatsApp?</summary>
-    <p>
-        Sim. Utilize o botão de WhatsApp disponível na página
-        para iniciar uma conversa com a equipe de atendimento.
-    </p>
-</details>
-
-</div>
-
-</div>
-</section>
-
-
-<section class="cta">
-
-<div class="cta-container">
-
-<h2>Precisa de atendimento?</h2>
-
-<p>
-    Nossa equipe está pronta para receber sua solicitação
-    e orientar você através dos canais disponíveis.
-</p>
-
-<a href="#contato" class="btn-primary">
-    Falar com atendente
-</a>
-
-</div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-<div class="footer-grid">
-
-<div class="footer-brand">
-
-<div class="logo">
-    <div class="logo-icon">✓</div>
-    Central de Atendimento
-</div>
-
-<p>
-    Canal informativo destinado a facilitar o acesso
-    aos serviços e canais de atendimento.
-</p>
-
-</div>
-
-<div class="footer-column">
-
-<h4>Atendimento</h4>
-
-<a href="#servicos">Serviços</a>
-<a href="#contato">Canais de contato</a>
-<a href="#faq">Perguntas frequentes</a>
-
-</div>
-
-<div class="footer-column">
-
-<h4>Institucional</h4>
-
-<a href="#">Sobre nós</a>
-<a href="#">Política de Privacidade</a>
-<a href="#">Termos de Uso</a>
-
-</div>
-
-<div class="footer-column">
-
-<h4>Contato</h4>
-
-<a href="#contato">WhatsApp</a>
-<a href="#contato">Telefone</a>
-<a href="#contato">E-mail</a>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-<span>© 2026 Central de Atendimento. Todos os direitos reservados.</span>
-
-<span>Atendimento e informações</span>
-
-</div>
-
-</footer>
-
-
-<a
-href="https://wa.me/5500000000000"
-target="_blank"
-class="whatsapp"
-aria-label="Falar pelo WhatsApp"
->
-💬
-</a>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+
+  <a class="botao-whatsapp"
+     href="https://wa.me/message/SKPFN7T7CFPDL1"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Falar pelo WhatsApp"
+     title="Falar pelo WhatsApp">
+
+    <svg viewBox="0 0 32 32"
+         xmlns="http://www.w3.org/2000/svg"
+         aria-hidden="true">
+      <path d="M16 .8A15.1 15.1 0 0 0 3.1 23.7L1 31l7.5-2A15.1 15.1 0 1 0 16 .8zm0 27.5c-2.3 0-4.5-.6-6.4-1.8l-.5-.3-4.4 1.2 1.2-4.3-.3-.5A12.3 12.3 0 1 1 16 28.3zm6.8-9.2c-.4-.2-2.1-1-2.5-1.1-.3-.1-.6-.2-.8.2-.3.4-.9 1.1-1.1 1.3-.2.3-.4.3-.8.1-.4-.2-1.5-.6-2.9-1.8-1.1-1-1.8-2.1-2-2.5-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.3-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.4.4-1.3 1.2-1.3 3s1.3 3.5 1.5 3.7c.2.3 2.5 3.9 6.1 5.4.8.3 1.5.5 2 .7.8.2 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.9.3-1.6.2-1.7-.1-.2-.4-.3-.8-.5z"/>
+    </svg>
+
+  </a>
+
+  <script>
+    document.getElementById("ano").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
